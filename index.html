@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ذكرياتنا الجميلة ❤️</title>
+  <title>Our beautiful memories ❤️</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Reem+Kufi:wght@500;700&display=swap');
 
@@ -14,7 +14,7 @@
     }
 
     body {
-      background: linear-gradient(135deg, #ffe6eb 0%, #ffd1dc 50%, #ffb6c1 100%);
+      background: linear-gradient(135deg, #1a0008 0%, #4a0018 50%, #800020 100%);
       font-family: 'Amiri', serif;
       min-height: 100vh;
       display: flex;
@@ -24,7 +24,7 @@
       position: relative;
     }
 
-    /* تساقط الورد فـ الخلفية */
+    /* تأثير بتلات الورد المتطورة الواقعية */
     .flower-container {
       position: fixed;
       top: 0;
@@ -32,24 +32,32 @@
       width: 100%;
       height: 100%;
       pointer-events: none;
-      z-index: 1;
+      z-index: 10;
+      overflow: hidden;
     }
 
-    .falling-flower {
+    .petal {
       position: absolute;
-      font-size: 24px;
-      animation: fall linear infinite;
-      opacity: 0.8;
+      background: linear-gradient(135deg, #ff4d6d, #c9184a, #800f2f);
+      border-radius: 50% 0 50% 50%;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      animation: fall3D linear infinite;
+      opacity: 0.85;
+      filter: drop-shadow(0 0 5px rgba(255, 77, 109, 0.5));
     }
 
-    @keyframes fall {
+    /* تأثير حركة الورد فـ الهواء بـ 3D */
+    @keyframes fall3D {
       0% {
-        transform: translateY(-10vh) rotate(0deg);
-        opacity: 1;
+        transform: translateY(-20vh) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(0.6);
+        opacity: 0;
+      }
+      15% {
+        opacity: 0.9;
       }
       100% {
-        transform: translateY(105vh) rotate(360deg);
-        opacity: 0.2;
+        transform: translateY(115vh) rotateX(720deg) rotateY(540deg) rotateZ(360deg) scale(1.2);
+        opacity: 0;
       }
     }
 
@@ -60,8 +68,8 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(255, 240, 243, 0.96);
-      backdrop-filter: blur(8px);
+      background: rgba(15, 0, 5, 0.95);
+      backdrop-filter: blur(15px);
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -71,25 +79,25 @@
     }
 
     .lock-box {
-      background: #ffffff;
+      background: rgba(255, 255, 255, 0.96);
       padding: 35px 25px;
       border-radius: 20px;
-      box-shadow: 0 15px 35px rgba(214, 51, 132, 0.2);
+      box-shadow: 0 0 30px rgba(255, 77, 109, 0.3);
       text-align: center;
       max-width: 340px;
       width: 90%;
-      border: 2px solid #ffccd5;
+      border: 2px solid #ff4d6d;
     }
 
     .lock-box h2 {
       font-family: 'Reem Kufi', sans-serif;
-      color: #d63384;
+      color: #a4133c;
       font-size: 1.6rem;
       margin-bottom: 10px;
     }
 
     .lock-box p {
-      color: #6c757d;
+      color: #4a5568;
       font-size: 1rem;
       margin-bottom: 20px;
     }
@@ -100,15 +108,15 @@
       font-size: 1.3rem;
       text-align: center;
       letter-spacing: 4px;
-      border: 2px solid #ff85a1;
+      border: 2px solid #ff758f;
       border-radius: 12px;
       outline: none;
-      color: #d63384;
+      color: #800f2f;
       margin-bottom: 20px;
     }
 
     .unlock-btn {
-      background: linear-gradient(45deg, #ff4d6d, #ff758f);
+      background: linear-gradient(45deg, #a4133c, #ff4d6d);
       color: white;
       border: none;
       padding: 12px 30px;
@@ -138,13 +146,13 @@
       transition: all 1s ease-out;
     }
 
-    /* معرض الصور المتفاعل */
+    /* معرض الصور */
     .photo-card {
-      background: #ffffff;
+      background: rgba(255, 255, 255, 0.95);
       padding: 15px;
       border-radius: 20px;
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-      border: 3px solid #ffb3c1;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+      border: 3px solid #ff758f;
       text-align: center;
       width: 100%;
       margin-bottom: 30px;
@@ -157,7 +165,7 @@
       height: 420px;
       border-radius: 15px;
       overflow: hidden;
-      border: 2px solid #ffe6ea;
+      border: 2px solid #ffccd5;
     }
 
     .slide {
@@ -180,19 +188,19 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      background: rgba(255, 255, 255, 0.7);
+      background: rgba(255, 255, 255, 0.8);
       border: none;
       font-size: 1.5rem;
       padding: 8px 14px;
       border-radius: 50%;
       cursor: pointer;
-      color: #d63384;
+      color: #800f2f;
       transition: 0.3s;
-      z-index: 10;
+      z-index: 20;
     }
 
     .nav-btn:hover {
-      background: #white;
+      background: #ffffff;
     }
 
     .prev { left: 10px; }
@@ -200,22 +208,22 @@
 
     .card-title {
       font-family: 'Reem Kufi', sans-serif;
-      color: #c9184a;
-      font-size: 1.4rem;
+      color: #800f2f;
+      font-size: 1.3rem;
       margin-top: 15px;
     }
 
-    /* ورقة الرسالة الطويلة */
+    /* ورقة الرسالة */
     .letter-box {
-      background: #fff0f3;
+      background: rgba(255, 240, 243, 0.96);
       padding: 30px 25px;
       border-radius: 15px;
-      border-right: 5px solid #ff4d6d;
-      box-shadow: 0 10px 25px rgba(214, 51, 132, 0.15);
+      border-right: 6px solid #ff4d6d;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
       width: 100%;
       line-height: 2;
-      font-size: 1.2rem;
-      color: #4a0e17;
+      font-size: 1.25rem;
+      color: #38040e;
       text-align: justify;
     }
 
@@ -226,7 +234,7 @@
     .signature {
       text-align: left;
       font-family: 'Reem Kufi', sans-serif;
-      color: #ff4d6d;
+      color: #c9184a;
       font-size: 1.3rem;
       margin-top: 20px;
     }
@@ -242,24 +250,23 @@
 </head>
 <body>
 
-  <!-- مطر الورد -->
+  <audio id="bgMusic" loop preload="auto">
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
   <div class="flower-container" id="flowerContainer"></div>
 
-  <!-- شاشة الكود السري -->
   <div id="lock-screen">
     <div class="lock-box">
       <h2>🔐 الرمز السري</h2>
       <p>أدخلي الكود الخاص بيكِ باش تتفتح المفاجأة ❤️</p>
-      <input type="password" id="pinInput" class="pin-input" placeholder="********" maxlength="8">
+      <input type="password" id="pinInput" class="pin-input" placeholder="060908" maxlength="6">
       <div id="errorMsg" class="error-msg">الرمز غير صحيح، حاولي مرة أخرى!</div>
       <button class="unlock-btn" onclick="checkPin()">افتحي المفاجأة ✨</button>
     </div>
   </div>
 
-  <!-- المحتوى الرئيسي بعد فتح القفل -->
   <div id="main-content">
-    
-    <!-- كارت معرض الصور -->
     <div class="photo-card">
       <div class="slider-container">
         <button class="nav-btn prev" onclick="changeSlide(-1)">❮</button>
@@ -273,51 +280,56 @@
 
         <button class="nav-btn next" onclick="changeSlide(1)">❯</button>
       </div>
-      <div class="card-title">أجمل الأوقات والذكريات معكِ 🌹 (اضغطي الأسهم لرؤية الصور)</div>
+      <div class="card-title">🌹 The most beautiful times and memories with you (اضغطي الأسهم لرؤية الصور)</div>
     </div>
 
-    <!-- الرسالة الطويلة -->
     <div class="letter-box">
-      <p>عزيزتي ❤️،</p>
-      
-      <p>I wrote these words to you because roses alone aren't enough to express the great place you hold in my heart. From the day I met you, everything in my life became more beautiful and sweeter..</p>      
-      <p>Your laughter is the best thing that can make me happy, and having you with me is the most beautiful gift. Thank you for all the wonderful moments we share together and the laughter we exchange..</p>      
-      <p>We promise to always be by your side, to support you, and to keep that beautiful smile of yours that I love so much..</p>
-      
-      <p>أI love you so much and you mean so much to me🌸❤️.</p>
-
-      <div class="signature">yahya  💖</div>
+      <p>My dear ❤️،</p>
+      <p>hade nhare rah spéciale bi nisba lia hite molato spéciale bghayte ngoulk chokrane bzzzzf 3la ayi haja zwina drtiha maeya mne nhare 3raftk fihe saraha nti binisba lia hia kolchi ou ana farhane ou bzzzzzzzzf hite 3ndi khti b7alk zwina drayba 9albk byade katbghi khire lnasse maha9oudache wara nb9a ra nwsafe fk gaema radi ngoule dk chi kamle hite nta spéciale 3la ayi wahde ou chokrane bzzzzzzzzf 3la gae lhwayje zwinine li dwzna baediyatna la fl9raya la ou hna kharjine mae baediyatna kaynine chi hwayje li dwznahe hna bjouje 3mrhome itnawe ou ba9i nchaellah ndiro maktare mohime mne hade chi kolo bghayte ngoule lk happy birthday ou kantmana lk 3ame jdide nchaellah 3amra bi tomohe ou tkouni ha9a9ti fiha gae ahdafe ou katb9Ay ndiya hia ahssane whda 3Raftha fhyati ou lah ikhalik lia
+      <p>ou kanwa3dk nkoune nimne bjanbk ou nsupportuk ou nkhali dimne dik dahka li fwajhk hite kat3jbni  </p>
+      <p>I love you so much and you mean so much to me 🌸❤️.</p>
+      <div class="signature">happu birthay ya ahssane okhte fhade dnya 💖</div>
     </div>
-
   </div>
 
   <script>
-    // الرمز السري
     const SECRET_PIN = "20080906";
 
-    // مطر الورد
-    const flowers = ['🌹', '🌸', '🌺', '🌷', '✨'];
+    // صناعة بتلات الورد المتساقطة
     const container = document.getElementById('flowerContainer');
+    const totalPetals = 30;
 
-    for (let i = 0; i < 30; i++) {
-      const flower = document.createElement('div');
-      flower.className = 'falling-flower';
-      flower.innerText = flowers[Math.floor(Math.random() * flowers.length)];
-      flower.style.left = Math.random() * 100 + 'vw';
-      flower.style.animationDuration = (Math.random() * 3 + 4) + 's';
-      flower.style.animationDelay = Math.random() * 5 + 's';
-      flower.style.fontSize = (Math.random() * 15 + 18) + 'px';
-      container.appendChild(flower);
+    for (let i = 0; i < totalPetals; i++) {
+      const petal = document.createElement('div');
+      petal.className = 'petal';
+      
+      petal.style.left = Math.random() * 100 + 'vw';
+      
+      // أحجام مختلفة لكل بتلة
+      const width = Math.random() * 25 + 25; // بين 25px و 50px
+      const height = width * 1.3;
+      petal.style.width = width + 'px';
+      petal.style.height = height + 'px';
+      
+      // سرعة متدرجة لكل بتلة
+      petal.style.animationDuration = (Math.random() * 5 + 5) + 's';
+      petal.style.animationDelay = (Math.random() * 6) + 's';
+      
+      container.appendChild(petal);
     }
 
-    // التحقق من الرمز
+    // فتح القفل وتغيير الشاشة
     function checkPin() {
       const input = document.getElementById('pinInput').value;
       const error = document.getElementById('errorMsg');
       const lockScreen = document.getElementById('lock-screen');
       const mainContent = document.getElementById('main-content');
+      const audio = document.getElementById('bgMusic');
 
       if (input === SECRET_PIN) {
+        // تشغيل الموسيقى
+        audio.play().catch(e => console.log("Audio play failed:", e));
+
         lockScreen.style.opacity = '0';
         setTimeout(() => {
           lockScreen.style.display = 'none';
@@ -333,7 +345,7 @@
       }
     }
 
-    // التحكم فـ معرض الصور
+    // سلايدر الصور
     let currentSlide = 0;
     const slides = document.querySelectorAll('.slide');
 
